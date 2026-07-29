@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Team 1",
+    "leader": "Saravanan T",
+    "role": "Full Stack Architect & Hackathon Lead",
+    "members": [
+      "Saravanan T (Lead)",
+      "Team 1 Member 2",
+      "Team 1 Member 3",
+      "Team 1 Member 4",
+      "Team 1 Member 5",
+      "Team 1 Member 6"
+    ],
+    "domains": ["#Forensic", "#AgriTech", "#Smart"]
+  },
+  {
+    "id": 2,
+    "name": "Team 2",
+    "leader": "Team 2 Lead",
+    "role": "AI & Data Engineering Lead",
+    "members": [
+      "Team 2 Lead",
+      "Team 2 Member 2",
+      "Team 2 Member 3",
+      "Team 2 Member 4",
+      "Team 2 Member 5",
+      "Team 2 Member 6"
+    ],
+    "domains": ["#Smart", "#FinTech"]
+  },
+  {
+    "id": 3,
+    "name": "Team 3",
+    "leader": "Team 3 Lead",
+    "role": "Cybersecurity & Systems Lead",
+    "members": [
+      "Team 3 Lead",
+      "Team 3 Member 2",
+      "Team 3 Member 3",
+      "Team 3 Member 4",
+      "Team 3 Member 5",
+      "Team 3 Member 6"
+    ],
+    "domains": ["#Forensic", "#Cloud"]
+  },
+  {
+    "id": 4,
+    "name": "Team 4",
+    "leader": "Team 4 Lead",
+    "role": "IoT & Embedded Systems Lead",
+    "members": [
+      "Team 4 Lead",
+      "Team 4 Member 2",
+      "Team 4 Member 3",
+      "Team 4 Member 4",
+      "Team 4 Member 5",
+      "Team 4 Member 6"
+    ],
+    "domains": ["#AgriTech", "#Automation"]
+  }
+]
