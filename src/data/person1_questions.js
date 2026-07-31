@@ -4,7 +4,7 @@
     domainTitle: "Forensic Science & Law Enforcement",
     title: "Coming Soon",
     dept: "Pending",
-    leadResearcher: "Saravanan T",
+    leadResearcher: "Angelo Varghese",
     evidence: "Coming Soon",
     failedTech: "Coming Soon",
     techOpportunity: "Coming Soon",
@@ -21,3 +21,5 @@
     }
   }
 ];
+
+export default person1_questions;

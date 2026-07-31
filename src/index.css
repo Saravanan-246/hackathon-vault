@@ -4,60 +4,58 @@
 /* ==========================================================================
    1. DESIGN SYSTEM VARIABLES & GLOBAL BASE
    ========================================================================== */
-@layer base {
-  :root {
-    --bg-light: #f8fafc;
-    --surface-white: rgba(255, 255, 255, 0.88);
-    
-    --accent-crimson: #dc2626;
-    --accent-crimson-hover: #b91c1c;
-    --accent-crimson-glow: rgba(220, 38, 38, 0.12);
-    
-    --border-subtle: rgba(226, 232, 240, 0.85);
-    --border-highlight: rgba(203, 213, 225, 0.95);
-    
-    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  }
+:root {
+  --bg-light: #f8fafc;
+  --surface-white: rgba(255, 255, 255, 0.92);
+  
+  --accent-crimson: #dc2626;
+  --accent-crimson-hover: #b91c1c;
+  --accent-crimson-glow: rgba(220, 38, 38, 0.12);
+  
+  --border-subtle: rgba(226, 232, 240, 0.9);
+  --border-highlight: rgba(203, 213, 225, 0.95);
+  
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  * {
-    border-color: var(--border-subtle);
-  }
+* {
+  border-color: var(--border-subtle);
+}
 
-  /* Global Crimson Selection Highlight */
-  ::selection {
-    background-color: var(--accent-crimson);
-    color: #ffffff;
-  }
+/* Global Crimson Selection Highlight */
+::selection {
+  background-color: var(--accent-crimson);
+  color: #ffffff;
+}
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  body {
-    background-color: var(--bg-light);
-    color: #0f172a;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    overflow-x: hidden;
-    min-height: 100vh;
-    
-    /* Ultra-Precise Engineering Grid + Ambient Dual Radial Glows */
-    background-image: 
-      radial-gradient(ellipse 75% 35% at 50% -5%, rgba(220, 38, 38, 0.08), transparent 100%),
-      radial-gradient(circle 600px at 100% 90%, rgba(220, 38, 38, 0.035), transparent 100%),
-      linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px;
-    background-attachment: fixed;
-  }
+body {
+  background-color: var(--bg-light);
+  color: #0f172a;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  
+  /* Ultra-Precise Engineering Grid + Ambient Dual Radial Glows */
+  background-image: 
+    radial-gradient(ellipse 75% 35% at 50% -5%, rgba(220, 38, 38, 0.08), transparent 100%),
+    radial-gradient(circle 600px at 100% 90%, rgba(220, 38, 38, 0.035), transparent 100%),
+    linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+  background-attachment: fixed;
+}
 
-  code, kbd, samp, pre, .font-mono {
-    font-family: 'JetBrains Mono', monospace;
-  }
+code, kbd, samp, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* ==========================================================================
@@ -98,28 +96,28 @@
   box-shadow: 
     0 4px 20px -2px rgba(15, 23, 42, 0.03), 
     0 2px 6px -1px rgba(15, 23, 42, 0.02),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-  transition: all 0.25s var(--ease-spring);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-spring), border-color 0.25s var(--ease-spring);
   will-change: transform, box-shadow;
 }
 
 .glass-panel:hover {
-  border-color: var(--border-highlight);
+  border-color: rgba(220, 38, 38, 0.3);
   box-shadow: 
-    0 12px 32px -4px rgba(15, 23, 42, 0.06), 
+    0 12px 32px -4px rgba(220, 38, 38, 0.06), 
     0 4px 12px -2px rgba(15, 23, 42, 0.03),
     inset 0 1px 0 0 rgba(255, 255, 255, 1);
   transform: translateY(-2px);
 }
 
 .glass-panel-active {
-  background: rgba(254, 242, 242, 0.75);
+  background: rgba(254, 242, 242, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(220, 38, 38, 0.35);
   box-shadow: 
     0 10px 30px -4px rgba(220, 38, 38, 0.12),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95);
 }
 
 /* ==========================================================================
@@ -128,12 +126,14 @@
 .text-gradient-red {
   background: linear-gradient(135deg, #0f172a 25%, #dc2626 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-crimson-pure {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

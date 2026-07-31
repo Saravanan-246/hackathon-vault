@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
+import LandingPage from './components/LandingPage';
 import Header from './components/Header';
 import LeaderCard from './components/LeaderCard';
 import DomainSection from './components/DomainSection';
 import { getDomainsData, allQuestions } from './data/connect';
 import teamsData from './data/teamsData.json';
-import { Users, ChevronDown, SearchX, ShieldCheck, Clock } from 'lucide-react';
+import { Users, ChevronDown, ShieldCheck, Clock } from 'lucide-react';
 
 export default function App() {
-  const [domainsData] = useState(getDomainsData());
+  const [showLanding, setShowLanding] = useState(true);
+  const [domainsData] = useState(() => getDomainsData());
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTeamId, setActiveTeamId] = useState(teamsData[0]?.id || 1); // Defaults to Team 1
+  const [activeTeamId, setActiveTeamId] = useState(teamsData[0]?.id || 1);
   const [expandedProblemId, setExpandedProblemId] = useState(null);
 
   // Active Team Details
   const currentTeam = teamsData.find((t) => t.id === Number(activeTeamId)) || teamsData[0];
 
-  // Helper to count problems for each team
+  // Helper to count non-placeholder problems for each team
   const getTeamProblemCount = (teamLeader) => {
     return allQuestions.filter((p) => {
-      if (!p.leadResearcher) return teamLeader === 'Saravanan T';
+      if (!p.leadResearcher || p.title === "Coming Soon") return false;
       return p.leadResearcher.toLowerCase() === teamLeader.toLowerCase();
     }).length;
   };
@@ -48,6 +50,11 @@ export default function App() {
 
   const activeCount = filteredDomains.reduce((acc, curr) => acc + curr.problems.length, 0);
 
+  // Render Landing Page first
+  if (showLanding) {
+    return <LandingPage onExplore={() => setShowLanding(false)} />;
+  }
+
   return (
     <div className="min-h-screen bg-slate-50/60 font-sans antialiased text-slate-900 selection:bg-red-500 selection:text-white">
       {/* Global Navigation Header */}
@@ -55,6 +62,7 @@ export default function App() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         totalCount={activeCount}
+        onBackToHome={() => setShowLanding(true)}
       />
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-8">

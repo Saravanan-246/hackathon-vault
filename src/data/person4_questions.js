@@ -1,10 +1,10 @@
 export const person4_questions = [
   {
-    id: "P4-401",
-    domainTitle: "Smart Cities & Infrastructure",
+    id: "P4-101",
+    domainTitle: "Coming Soon",
     title: "Coming Soon",
     dept: "Pending",
-    leadResearcher: "Pending",
+    leadResearcher: "Barath Anandh S",
     evidence: "Coming Soon",
     failedTech: "Coming Soon",
     techOpportunity: "Coming Soon",
@@ -21,3 +21,5 @@ export const person4_questions = [
     }
   }
 ];
+
+export default person4_questions;

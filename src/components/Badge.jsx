@@ -7,31 +7,39 @@ export default function Badge({
   icon: Icon = null, 
   className = '' 
 }) {
-  // Mobile-first flex layout with tight gaps and whitespace-nowrap to prevent ugly wrapping
+  // Clean flex layout with truncation support to prevent layout overflow
   const baseStyles = "inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md text-[10px] sm:text-xs font-mono font-semibold tracking-wide transition-all duration-200 select-none whitespace-nowrap shrink-0 max-w-full";
 
   const variants = {
-    // High-impact Red Accent Badge
-    red: "bg-red-600 text-white border border-red-500 shadow-sm shadow-red-200/80 hover:bg-red-700",
+    // Solid Crimson Red Badge
+    red: "bg-red-600 text-white border border-red-500 shadow-2xs hover:bg-red-700",
     
-    // Score Badge (Crisp White + Crimson Highlights)
-    score: "bg-red-50/90 text-red-700 border border-red-200 shadow-sm hover:border-red-300",
+    // Score / Highlight Badge (Soft Red Tint)
+    score: "bg-red-50 text-red-700 border border-red-200 shadow-2xs hover:border-red-300",
     
-    // Clean White Card Badge
-    outline: "bg-white text-slate-800 border border-slate-200/90 shadow-sm hover:border-slate-300 hover:bg-slate-50",
+    // Clean White Outline Badge
+    outline: "bg-white text-slate-800 border border-slate-200/90 shadow-2xs hover:border-slate-300 hover:bg-slate-50",
     
     // Subtle Muted Badge
-    ghost: "bg-slate-100/80 text-slate-600 border border-slate-200/60 hover:text-slate-900"
+    ghost: "bg-slate-100 text-slate-600 border border-slate-200/80 hover:text-slate-900"
+  };
+
+  // Inherit icon color dynamically based on badge variant
+  const iconColors = {
+    red: "text-white",
+    score: "text-red-600",
+    outline: "text-slate-500",
+    ghost: "text-slate-500"
   };
 
   return (
     <span className={`${baseStyles} ${variants[variant] || variants.outline} ${className}`}>
       {Icon && (
-        <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-red-600 shrink-0" />
+        <Icon className={`w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 ${iconColors[variant] || 'text-slate-500'}`} />
       )}
       
       {label && (
-        <span className="text-slate-500 uppercase text-[9px] sm:text-[10px] tracking-wider shrink-0">
+        <span className="opacity-75 text-[9px] sm:text-[10px] tracking-wider shrink-0 font-medium">
           {label}:
         </span>
       )}

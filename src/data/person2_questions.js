@@ -1,10 +1,10 @@
 ﻿export const person2_questions = [
   {
-    id: "P2-201",
-    domainTitle: "AgriTech & Rural Solutions",
+    id: "P2-101",
+    domainTitle: "Coming Soon",
     title: "Coming Soon",
     dept: "Pending",
-    leadResearcher: "Pending",
+    leadResearcher: "Darshna Senthilkumaran",
     evidence: "Coming Soon",
     failedTech: "Coming Soon",
     techOpportunity: "Coming Soon",
@@ -21,3 +21,5 @@
     }
   }
 ];
+
+export default person2_questions;

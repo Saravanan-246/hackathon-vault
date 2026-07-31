@@ -1,11 +1,10 @@
-﻿ 
-export const person3_questions = [
+﻿export const person3_questions = [
   {
-    id: "P3-301",
-    domainTitle: "Smart Healthcare & Diagnostics",
+    id: "P3-101",
+    domainTitle: "Coming Soon",
     title: "Coming Soon",
     dept: "Pending",
-    leadResearcher: "Pending",
+    leadResearcher: "Kaushik D",
     evidence: "Coming Soon",
     failedTech: "Coming Soon",
     techOpportunity: "Coming Soon",
@@ -22,3 +21,5 @@ export const person3_questions = [
     }
   }
 ];
+
+export default person3_questions;
